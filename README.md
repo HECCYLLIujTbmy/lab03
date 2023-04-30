@@ -165,18 +165,17 @@ $ gist REPORT.md
 Создайте `CMakeList.txt` в директории [formatter_lib](formatter_lib),
 с помощью которого можно будет собирать статическую библиотеку *formatter*.
 
-### Задание 2
-У компании "Formatter Inc." есть перспективная библиотека,
-которая является расширением предыдущей библиотеки. Т.к. вы уже овладели
-навыком созданием `CMakeList.txt` для статической библиотеки *formatter*, ваш 
-руководитель поручает заняться созданием `CMakeList.txt` для библиотеки 
-*formatter_ex*, которая в свою очередь использует библиотеку *formatter*.
-
-```sh
-$ cd /home/kali/HECCYLLIujTbmy/workspace/projects/lab02/lab3_x3/lab03/
-```
-```sh
-$ cat > CMakeLists.txt      
+```sh 
+cd /home/kali/HECCYLLIujTbmy/workspace/projects/lab02/lab3_x3/lab03/formatter_lib/
+```                                                                                                                                                                     ```sh                                                            
+┌──(kali㉿kali)-[~/…/lab02/lab3_x3/lab03/formatter_lib]
+└─$ cat > CMakeLists.txt
+cmake_minimum_required(VERSION 3.4)^[[3~
+^Z
+zsh: suspended  cat > CMakeLists.txt
+```                                                                                                                                                                     ```sh                                                                       
+┌──(kali㉿kali)-[~/…/lab02/lab3_x3/lab03/formatter_lib]
+└─$ cat > CMakeLists.txt               
 cmake_minimum_required(VERSION 3.4)
 project(formatter_lib)
 set(CMAKE_CXX_STANDARD 11)
@@ -184,46 +183,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_library(formatter_lib STATIC ${CMAKE_CURRENT_SOURCE_DIR}/formatter.cpp)
 ^Z
 zsh: suspended  cat > CMakeLists.txt
-```
-
-```sh
-$ cmake -B build
--- The C compiler identification is GNU 12.2.0
--- The CXX compiler identification is GNU 12.2.0
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Check for working C compiler: /usr/bin/cc - skipped
--- Detecting C compile features
--- Detecting C compile features - done
--- Detecting CXX compiler ABI info
--- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: /usr/bin/c++ - skipped
--- Detecting CXX compile features
--- Detecting CXX compile features - done
--- Configuring done
-CMake Error at CMakeLists.txt:5 (add_library):
-  Cannot find source file:
-
-    /home/kali/HECCYLLIujTbmy/workspace/projects/lab02/lab3_x3/lab03/formatter.cpp
-
-  Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm .h
-  .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90 .f95 .f03 .hip .ispc
-
-
-CMake Error at CMakeLists.txt:5 (add_library):
-  No SOURCES given to target: formatter_lib
-```  
- 
- ```sh
-  $ ls                                                                  
-build  CMakeLists.txt  formatter_ex_lib  formatter_lib  hello_world_application  LICENSE  preview.png  README.md  solver_application
-```
-```sh
-$ cd formatter_lib
-```
-
-```sh
-$ cmake -B build
+```                                                                                                                                                                     ```sh                                                                      
+┌──(kali㉿kali)-[~/…/lab02/lab3_x3/lab03/formatter_lib]
+└─$ cmake -B build
 -- The C compiler identification is GNU 12.2.0
 -- The CXX compiler identification is GNU 12.2.0
 -- Detecting C compiler ABI info
@@ -241,10 +203,28 @@ $ cmake -B build
 -- Build files have been written to: /home/kali/HECCYLLIujTbmy/workspace/projects/lab02/lab3_x3/lab03/formatter_lib/build
 ```
 ```sh
-$ cmake --build build
+┌──(kali㉿kali)-[~/…/lab02/lab3_x3/lab03/formatter_lib]
+└─$ cmake -B build
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/kali/HECCYLLIujTbmy/workspace/projects/lab02/lab3_x3/lab03/formatter_lib/build
+```
+```sh                                      
+┌──(kali㉿kali)-[~/…/lab02/lab3_x3/lab03/formatter_lib]
+└─$ cmake --build build
 [ 50%] Building CXX object CMakeFiles/formatter_lib.dir/formatter.cpp.o
 [100%] Linking CXX static library libformatter_lib.a
 [100%] Built target formatter_lib
+                                   
+```
+### Задание 2
+У компании "Formatter Inc." есть перспективная библиотека,
+которая является расширением предыдущей библиотеки. Т.к. вы уже овладели
+навыком созданием `CMakeList.txt` для статической библиотеки *formatter*, ваш 
+руководитель поручает заняться созданием `CMakeList.txt` для библиотеки 
+*formatter_ex*, которая в свою очередь использует библиотеку *formatter*.
+
+
 ```
 ### Задание 3
 Конечно же ваша компания предоставляет примеры использования своих библиотек.
