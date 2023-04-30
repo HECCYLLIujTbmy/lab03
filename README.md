@@ -224,6 +224,42 @@ zsh: suspended  cat > CMakeLists.txt
 руководитель поручает заняться созданием `CMakeList.txt` для библиотеки 
 *formatter_ex*, которая в свою очередь использует библиотеку *formatter*.
 
+$ cd formatter_ex_lib
+                                                                                                                                                                                                                                           
+┌──(kali㉿kali)-[~/…/lab02/lab3_x3/lab03/formatter_ex_lib]
+└─$ cat > CMakeLists.txt
+cmake_minimum_required(VERSION 3.4)
+project(formatter_ex_lib)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../formatter_lib formatter_lib_dir)
+add_library(formatter_ex_lib STATIC ${CMAKE_CURRENT_SOURCE_DIR}/formatter_ex.cpp)
+target_include_directories(formatter_ex_lib PUBLIC
+${CMAKE_CURRENT_SOURCE_DIR}/../formatter_lib
+)
+target_link_libraries(formatter_ex_lib formatter_lib)
+^Z
+zsh: suspended  cat > CMakeLists.txt
+                                                                                                                                                                                                                                           
+┌──(kali㉿kali)-[~/…/lab02/lab3_x3/lab03/formatter_ex_lib]
+└─$ cmake -B build
+-- The C compiler identification is GNU 12.2.0
+-- The CXX compiler identification is GNU 12.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/kali/HECCYLLIujTbmy/workspace/projects/lab02/lab3_x3/lab03/formatter_ex_lib/build
+
+
 
 ```
 ### Задание 3
