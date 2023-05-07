@@ -167,13 +167,18 @@ $ gist REPORT.md
 
 ```sh 
 cd /home/kali/HECCYLLIujTbmy/workspace/projects/lab02/lab3_x3/lab03/formatter_lib/
-```                                                                                                                                                                     ```sh                                                            
+```
+
+
+```sh                                                            
 ┌──(kali㉿kali)-[~/…/lab02/lab3_x3/lab03/formatter_lib]
 └─$ cat > CMakeLists.txt
 cmake_minimum_required(VERSION 3.4)^[[3~
 ^Z
 zsh: suspended  cat > CMakeLists.txt
-```                                                                                                                                                                     ```sh                                                                       
+```                                                                                                                                                             
+
+```sh                                                                       
 ┌──(kali㉿kali)-[~/…/lab02/lab3_x3/lab03/formatter_lib]
 └─$ cat > CMakeLists.txt               
 cmake_minimum_required(VERSION 3.4)
@@ -183,7 +188,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_library(formatter_lib STATIC ${CMAKE_CURRENT_SOURCE_DIR}/formatter.cpp)
 ^Z
 zsh: suspended  cat > CMakeLists.txt
-```                                                                                                                                                                     ```sh                                                                      
+```                                                                                                                                                             ```sh                                                                      
 ┌──(kali㉿kali)-[~/…/lab02/lab3_x3/lab03/formatter_lib]
 └─$ cmake -B build
 -- The C compiler identification is GNU 12.2.0
@@ -202,6 +207,7 @@ zsh: suspended  cat > CMakeLists.txt
 -- Generating done
 -- Build files have been written to: /home/kali/HECCYLLIujTbmy/workspace/projects/lab02/lab3_x3/lab03/formatter_lib/build
 ```
+
 ```sh
 ┌──(kali㉿kali)-[~/…/lab02/lab3_x3/lab03/formatter_lib]
 └─$ cmake -B build
@@ -209,6 +215,7 @@ zsh: suspended  cat > CMakeLists.txt
 -- Generating done
 -- Build files have been written to: /home/kali/HECCYLLIujTbmy/workspace/projects/lab02/lab3_x3/lab03/formatter_lib/build
 ```
+
 ```sh                                      
 ┌──(kali㉿kali)-[~/…/lab02/lab3_x3/lab03/formatter_lib]
 └─$ cmake --build build
