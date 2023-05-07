@@ -231,8 +231,9 @@ zsh: suspended  cat > CMakeLists.txt
 руководитель поручает заняться созданием `CMakeList.txt` для библиотеки 
 *formatter_ex*, которая в свою очередь использует библиотеку *formatter*.
 
+```sh
 $ cd formatter_ex_lib
-                                                                                                                                                                                                                                           
+```                                                                                                                                                             ```sh                                                                              
 ┌──(kali㉿kali)-[~/…/lab02/lab3_x3/lab03/formatter_ex_lib]
 └─$ cat > CMakeLists.txt
 cmake_minimum_required(VERSION 3.4)
@@ -247,7 +248,7 @@ ${CMAKE_CURRENT_SOURCE_DIR}/../formatter_lib
 target_link_libraries(formatter_ex_lib formatter_lib)
 ^Z
 zsh: suspended  cat > CMakeLists.txt
-                                                                                                                                                                                                                                           
+```                                                                                                                                                             ```sh                                                                              
 ┌──(kali㉿kali)-[~/…/lab02/lab3_x3/lab03/formatter_ex_lib]
 └─$ cmake -B build
 -- The C compiler identification is GNU 12.2.0
@@ -265,7 +266,7 @@ zsh: suspended  cat > CMakeLists.txt
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /home/kali/HECCYLLIujTbmy/workspace/projects/lab02/lab3_x3/lab03/formatter_ex_lib/build
-
+```
 
 
 ```
