@@ -319,6 +319,14 @@ zsh: suspended  cat > CMakeLists.txt
 -- Generating done
 -- Build files have been written to: /home/kali/HECCYLLIujTbmy/workspace/projects/lab02/lab3_x3/lab03/hello_world_application/build
 ```
+
+```sh
+kali㉿kali)-[~/…/lab02/lab3_x3/lab03/hello_world_application]
+└─$ build/hello_world
+-------------------------
+hello, world!
+-------------------------
+```
 * *solver*, приложение которое испольует статические библиотеки *formatter_ex* и *solver_lib*.
 
 **Удачной стажировки!**
