@@ -275,6 +275,41 @@ zsh: suspended  cat > CMakeLists.txt
 Чтобы продемонстрировать как работать с библиотекой *formatter_ex*,
 вам необходимо создать два `CMakeList.txt` для двух простых приложений:
 * *hello_world*, которое использует библиотеку *formatter_ex*;
+
+
+```sh
+(kali㉿kali)-[~/…/lab02/lab3_x3/lab03/hello_world_application]
+└─$ cat > CMakeLists.txt
+cmake_minimum_required(VERSION 3.4)
+project(hello_world)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../formatter_ex_lib formatter_ex_lib_dir)
+add_executable(hello_world ${CMAKE_CURRENT_SOURCE_DIR}/hello_world.cpp)
+target_include_directories(hello_world PUBLIC
+${CMAKE_CURRENT_SOURCE_DIR}/../formatter_ex_lib
+)    
+^Z
+zsh: suspended  cat > CMakeLists.txt
+```                                                                                                                                                             ```sh                                                                             
+┌──(kali㉿kali)-[~/…/lab02/lab3_x3/lab03/hello_world_application]
+└─$ cmake -B build
+-- The C compiler identification is GNU 12.2.0
+-- The CXX compiler identification is GNU 12.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/kali/HECCYLLIujTbmy/workspace/projects/lab02/lab3_x3/lab03/hello_world_application/build
+```
 * *solver*, приложение которое испольует статические библиотеки *formatter_ex* и *solver_lib*.
 
 **Удачной стажировки!**
