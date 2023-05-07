@@ -343,13 +343,17 @@ target_include_directories(formatter_ex_lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/.
 target_link_libraries(solver formatter_ex_lib solver_lib)
 ^Z
 zsh: suspended  cat > CMakeLists.txt
-                                                                                                                                                                                                                                            
+```                                                                                                                                                                     ```sh                                                                       
 ┌──(kali㉿kali)-[~/…/lab02/lab3_x3/lab03/solver_lib]
 └─$ cd ..                                                                          
-                                                                                                                                                                                                                                            
+```                                                                                                                                                                     
+
+```sh                                                                     
 ┌──(kali㉿kali)-[~/…/projects/lab02/lab3_x3/lab03]
 └─$ cd solver_application
-                                                                                                                                                                                                                                            
+```                                                                                                                                                                    
+
+```sh                                                                     
 ┌──(kali㉿kali)-[~/…/lab02/lab3_x3/lab03/solver_application]
 └─$ cat > CMakeLists.txt 
 cmake_minimum_required(VERSION 3.4)
@@ -366,7 +370,7 @@ ${CMAKE_CURRENT_SOURCE_DIR}/../solver_lib
 target_link_libraries(solver formatter_ex_lib solver_lib)
 ^Z
 zsh: suspended  cat > CMakeLists.txt
-                                                                                                                                                                                                                                            
+```                                                                                                                                                                     ```sh                                                                     
 ┌──(kali㉿kali)-[~/…/lab02/lab3_x3/lab03/solver_application]
 └─$ cmake -B build      
 -- The C compiler identification is GNU 12.2.0
@@ -384,7 +388,9 @@ zsh: suspended  cat > CMakeLists.txt
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /home/kali/HECCYLLIujTbmy/workspace/projects/lab02/lab3_x3/lab03/solver_application/build/
+```
 
+```sh
 ┌──(kali㉿kali)-[~/…/lab02/lab3_x3/lab03/solver_application]
 $ cmake --build build
 [ 12%] Building CXX object solver_lib_dir/CMakeFiles/solver_lib.dir/solver.cpp.o
@@ -399,13 +405,16 @@ $ cmake --build build
 [ 87%] Building CXX object CMakeFiles/solver.dir/equation.cpp.o
 [100%] Linking CXX executable solver
 [100%] Built target solver
+```
 
+```sh
 ┌──(kali㉿kali)-[~/…/lab02/lab3_x3/lab03/solver_application] 
 $ build/solver
 2 4 6
 -------------------------
 error: discriminant < 0
 -------------------------
+```
 **Удачной стажировки!**
 
 ## Links
