@@ -329,6 +329,83 @@ hello, world!
 ```
 * *solver*, приложение которое испольует статические библиотеки *formatter_ex* и *solver_lib*.
 
+```sh
+(kali㉿kali)-[~/…/lab02/lab3_x3/lab03/solver_lib]
+└─$ cat > CMakeLists.txt                                                           
+cmake_minimum_required(VERSION 3.4)
+project(solver)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../formatter_ex_lib formatter_ex_lib_dir)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../solver_lib solver_lib_dir)
+add_executable(solver ${CMAKE_CURRENT_SOURCE_DIR}/equation.cpp)
+target_include_directories(formatter_ex_lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../formatter_ex_lib${CMAKE_CURRENT_SOURCE_DIR}/../solver_lib)
+target_link_libraries(solver formatter_ex_lib solver_lib)
+^Z
+zsh: suspended  cat > CMakeLists.txt
+                                                                                                                                                                                                                                            
+┌──(kali㉿kali)-[~/…/lab02/lab3_x3/lab03/solver_lib]
+└─$ cd ..                                                                          
+                                                                                                                                                                                                                                            
+┌──(kali㉿kali)-[~/…/projects/lab02/lab3_x3/lab03]
+└─$ cd solver_application
+                                                                                                                                                                                                                                            
+┌──(kali㉿kali)-[~/…/lab02/lab3_x3/lab03/solver_application]
+└─$ cat > CMakeLists.txt 
+cmake_minimum_required(VERSION 3.4)
+project(solver)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../formatter_ex_lib formatter_ex_lib_dir)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../solver_lib solver_lib_dir)
+add_executable(solver ${CMAKE_CURRENT_SOURCE_DIR}/equation.cpp)
+target_include_directories(formatter_ex_lib PUBLIC
+${CMAKE_CURRENT_SOURCE_DIR}/../formatter_ex_lib
+${CMAKE_CURRENT_SOURCE_DIR}/../solver_lib
+)
+target_link_libraries(solver formatter_ex_lib solver_lib)
+^Z
+zsh: suspended  cat > CMakeLists.txt
+                                                                                                                                                                                                                                            
+┌──(kali㉿kali)-[~/…/lab02/lab3_x3/lab03/solver_application]
+└─$ cmake -B build      
+-- The C compiler identification is GNU 12.2.0
+-- The CXX compiler identification is GNU 12.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/kali/HECCYLLIujTbmy/workspace/projects/lab02/lab3_x3/lab03/solver_application/build/
+
+┌──(kali㉿kali)-[~/…/lab02/lab3_x3/lab03/solver_application]
+$ cmake --build build
+[ 12%] Building CXX object solver_lib_dir/CMakeFiles/solver_lib.dir/solver.cpp.o
+[ 25%] Linking CXX static library libsolver_lib.a
+[ 25%] Built target solver_lib
+[ 37%] Building CXX object formatter_ex_lib_dir/formatter_lib_dir/CMakeFiles/formatter_lib.dir/formatter.cpp.o
+[ 50%] Linking CXX static library libformatter_lib.a
+[ 50%] Built target formatter_lib
+[ 62%] Building CXX object formatter_ex_lib_dir/CMakeFiles/formatter_ex_lib.dir/formatter_ex.cpp.o
+[ 75%] Linking CXX static library libformatter_ex_lib.a
+[ 75%] Built target formatter_ex_lib
+[ 87%] Building CXX object CMakeFiles/solver.dir/equation.cpp.o
+[100%] Linking CXX executable solver
+[100%] Built target solver
+
+┌──(kali㉿kali)-[~/…/lab02/lab3_x3/lab03/solver_application] 
+$ build/solver
+2 4 6
+-------------------------
+error: discriminant < 0
+-------------------------
 **Удачной стажировки!**
 
 ## Links
