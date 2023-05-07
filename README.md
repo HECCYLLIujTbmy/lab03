@@ -267,8 +267,17 @@ zsh: suspended  cat > CMakeLists.txt
 -- Generating done
 -- Build files have been written to: /home/kali/HECCYLLIujTbmy/workspace/projects/lab02/lab3_x3/lab03/formatter_ex_lib/build
 ```
-
-
+```sh
+$ cmake --build build
+[ 16%] Building CXX object formatter_ex_lib_dir/formatter_lib_dir/CMakeFiles/formatter_lib.dir/formatter.cpp.o
+[ 33%] Linking CXX static library libformatter_lib.a
+[ 33%] Built target formatter_lib
+[ 50%] Building CXX object formatter_ex_lib_dir/CMakeFiles/formatter_ex_lib.dir/formatter_ex.cpp.o
+[ 66%] Linking CXX static library libformatter_ex_lib.a
+[ 66%] Built target formatter_ex_lib
+[ 83%] Building CXX object CMakeFiles/hello_world.dir/hello_world.cpp.o
+[100%] Linking CXX executable hello_world
+[100%] Built target hello_world
 ```
 ### Задание 3
 Конечно же ваша компания предоставляет примеры использования своих библиотек.
